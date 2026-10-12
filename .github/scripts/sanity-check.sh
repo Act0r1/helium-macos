@@ -39,7 +39,7 @@ if [ "$_check" = "substitution" ]; then
         -r "$_main_repo/domain_regex.list" \
         -f "$_main_repo/domain_substitution.list" "$_src_dir"
 
-    grep -q Helium "$_src_dir/components/omnibox_strings.grdp"
+    grep -q Argon "$_src_dir/components/omnibox_strings.grdp"
     exit 0
 fi
 

@@ -1,6 +1,8 @@
-# helium-macos
-macOS packaging & development tooling for the
-[Helium Browser](https://github.com/imputnet/helium).
+# Argon for macOS
+macOS packaging & development tooling for
+[Argon](https://github.com/Act0r1/helium/tree/ws), a personal Helium fork.
+
+See [ARGON.md](ARGON.md) for cloning, building, and macOS icon generation.
 
 ## Building and development
 macOS is our primary development platform, so it's the recommended environment

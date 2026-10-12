@@ -1,4 +1,4 @@
-# Building and developing Helium
+# Building and developing Argon
 
 ### Navigation
 - [Official (non-development) build](#official-non-development-build)
@@ -19,7 +19,7 @@
 1. Install Python 3 via Homebrew: `brew install python@3.13`
 1. Install Python dependencies via `pip3`: `pip3 install httplib2==0.22.0 requests pillow`
     * Note that you might need to use `--break-system-packages` if you don't want to use a
-      dedicated Python environment for building Helium.
+      dedicated Python environment for building Argon.
 1. Install Metal toolchain: `xcodebuild -downloadComponent MetalToolchain`
 1. Install wget via Homebrew: `brew install wget`
 1. Install GNU coreutils and readline via Homebrew: `brew install coreutils readline`
@@ -41,7 +41,7 @@ If you want to notarize the build, you need to have an Apple Developer ID and a 
 If you don't have an Apple Developer ID to sign the build (or you don't want to sign it), you can simply not specify MACOS_CERTIFICATE_NAME.
 
 ```sh
-git clone --recurse-submodules https://github.com/imputnet/helium-macos.git
+git clone --recurse-submodules https://github.com/Act0r1/helium-macos.git
 cd helium-macos
 ```
 
@@ -98,7 +98,7 @@ brew install quilt
     he run
     ```
 
-5. Done! You have your own home-grown Helium ready for tinkering.
+5. Done! You have your own home-grown Argon ready for tinkering.
 
 ### Creating a new patch
 

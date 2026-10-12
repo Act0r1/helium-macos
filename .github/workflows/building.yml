@@ -1,4 +1,4 @@
-name: Building macOS binaries of Helium
+name: Building macOS binaries of Argon
 
 defaults:
   run:

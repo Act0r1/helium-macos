@@ -1,4 +1,4 @@
-name: Build Helium for macOS
+name: Build Argon for macOS
 
 defaults:
   run:
@@ -26,7 +26,7 @@ on:
 
 jobs:
   build_job:
-    name: Build Helium for macOS
+    name: Build Argon for macOS
     runs-on: ${{ inputs.os }}
     outputs:
       status: ${{ steps.build.outputs.status }}

@@ -12,6 +12,9 @@ source "$_root_dir/env.sh"
 source "$_root_dir/devutils/build_tools.sh"
 
 helium_resources() {
+  if [ "$(uname -s)" = Darwin ]; then
+    "$_root_dir/resources/compile_assets.sh"
+  fi
   python3 "$_main_repo/utils/generate_resources.py" "$_main_repo/resources/generate_resources.txt" "$_main_repo/resources"
   python3 "$_main_repo/utils/replace_resources.py" "$_root_dir/resources/platform_resources.txt" "$_root_dir/resources" "$_src_dir"
   python3 "$_main_repo/utils/replace_resources.py" "$_main_repo/resources/helium_resources.txt" "$_main_repo/resources" "$_src_dir"

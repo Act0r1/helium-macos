@@ -23,13 +23,13 @@ class mount(object):
 
 def get_asset_url(release, arch):
   for asset in release['assets']:
-      if asset['name'].endswith(f'_{arch}-macos.dmg'):
+      if asset['name'].startswith('argon_') and asset['name'].endswith(f'_{arch}-macos.dmg'):
         return asset['browser_download_url']
-  assert(False)
+  return None
 
 
 def get_historic_dmg_urls():
-  repo = os.environ.get('GITHUB_REPOSITORY', 'imputnet/helium-macos')
+  repo = os.environ.get('GITHUB_REPOSITORY', 'Act0r1/helium-macos')
   response = requests.get(
     f'https://api.github.com/repos/{repo}/releases?per_page=5',
     headers=REQUEST_HEADERS,
@@ -43,6 +43,8 @@ def get_historic_dmg_urls():
     version = release['tag_name'].split('-')[0]
     x86_url = get_asset_url(release, 'x86_64')
     arm_url = get_asset_url(release, 'arm64')
+    if x86_url is None or arm_url is None:
+      continue
     urls[version] = (arm_url, x86_url)
 
   return urls
@@ -79,7 +81,7 @@ def generate_delta_for(version, urls, args):
       print(f.name)
       with tempfile.TemporaryDirectory() as d1, tempfile.TemporaryDirectory() as d2:
         with mount(f.name, d1), mount(args[i], d2):
-          do_diff(d1 + '/Helium.app', d2 + '/Helium.app', f'{args[2]}/{version}-{arch}.delta')
+          do_diff(d1 + '/Argon.app', d2 + '/Argon.app', f'{args[2]}/{version}-{arch}.delta')
 
 
 if __name__ == '__main__':

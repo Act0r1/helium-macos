@@ -128,7 +128,7 @@ ___helium_build() {
 }
 
 ___helium_run() {
-    "$_out_dir/Helium.app/Contents/MacOS/Helium" \
+    "$_out_dir/Argon.app/Contents/MacOS/Argon" \
     --user-data-dir="$HOME/Library/Application Support/net.imput.helium.dev" \
     --enable-ui-devtools \
     --use-mock-keychain \
@@ -301,7 +301,7 @@ __helium_menu() {
 
             echo "\n" >&2
             echo "\tbuild - builds a development binary" >&2
-            echo "\trun - runs a development build of helium with dev data dir & ui devtools enabled" >&2
+            echo "\trun - runs a development build of Argon with dev data dir & ui devtools enabled" >&2
             echo "\treset - nukes everything" >&2
     esac
 }
